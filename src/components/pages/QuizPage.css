@@ -1,0 +1,18 @@
+.quiz-page {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.quiz-page .question {
+  display: flex;
+  justify-content: center;
+  margin-top: 10rem;
+  font-size: large;
+}
+.quiz-page .controllers-container {
+  margin-top: 10rem;
+  bottom: 1rem;
+  display: flex;
+  justify-content: center;
+}

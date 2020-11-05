@@ -1,0 +1,23 @@
+.home-page {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.description {
+  display: flex;
+  justify-content: center;
+  margin-top: 10rem;
+  font-size: large;
+}
+.sub-description {
+  display: flex;
+  justify-content: center;
+  margin-top: 10rem;
+  font-size: large;
+}
+.controllers-container {
+  margin-top: 10rem;
+  bottom: 1rem;
+  display: flex;
+  justify-content: center;
+}
