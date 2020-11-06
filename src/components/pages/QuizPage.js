@@ -7,16 +7,11 @@ import "./QuizPage.css";
 
 export default function QuizPage() {
   const history = useHistory();
-  const {
-    questions,
-    resetTriviaGameManager,
-    setRightResults,
-    setWrongResults,
-  } = useContext(TriviaGameContext);
+  const { questions, resetTriviaGameManager, addRightAnswer } = useContext(
+    TriviaGameContext
+  );
 
   const [indexQuestion, setIndexQuestion] = useState(0);
-  const [rightAnswers, setRightAnswers] = useState([]);
-  const [wrongAnswers, setWrongAnswers] = useState([]);
 
   useEffect(() => {
     if (questions.length === 0) {
@@ -29,19 +24,13 @@ export default function QuizPage() {
     saveAnswer(answer);
     setIndexQuestion(indexQuestion + 1);
     if (indexQuestion === 9) {
-      setRightResults(rightAnswers);
-      setWrongResults(wrongAnswers);
-      handleRestartGame();
+        history.push("/resultspage");
     }
   };
 
   const saveAnswer = (answer) => {
     if (questions[indexQuestion].correct_answer === answer) {
-      rightAnswers.push(questions[indexQuestion]);
-      setRightAnswers(rightAnswers);
-    } else {
-      wrongAnswers.push(questions[indexQuestion]);
-      setWrongAnswers(wrongAnswers);
+      addRightAnswer(indexQuestion);
     }
   };
 
