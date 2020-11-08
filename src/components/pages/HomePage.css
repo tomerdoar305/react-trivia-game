@@ -3,21 +3,32 @@
   flex-direction: column;
   justify-content: space-between;
 }
-.description {
+
+.home-page .description {
   display: flex;
   justify-content: center;
   margin-top: 10rem;
   font-size: large;
 }
-.sub-description {
+
+.home-page .sub-description {
   display: flex;
   justify-content: center;
   margin-top: 10rem;
   font-size: large;
 }
-.controllers-container {
+
+.home-page .controllers-container {
   margin-top: 10rem;
   bottom: 1rem;
   display: flex;
   justify-content: center;
+}
+
+.home-page .error-message {
+  bottom: 1rem;
+  display: flex;
+  justify-content: center;
+  color: red;
+  height: 1rem;
 }

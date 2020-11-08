@@ -5,7 +5,7 @@ import TriviaGameManager from "./context/TriviaGameManager";
 import "./App.css";
 
 export default function App() {
-  const triviaGameManager = new TriviaGameManager("This is the test value");
+  const triviaGameManager = new TriviaGameManager();
   return (
     <TriviaGameContext.Provider value={triviaGameManager}>
       <div className={"page-container"}>

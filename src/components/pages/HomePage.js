@@ -9,19 +9,19 @@ import "./HomePage.css";
 export default function HomePage() {
   const history = useHistory();
   const contextType = useContext(TriviaGameContext);
-  const [readyToPlay, setReadyToPlay] = useState(false);
+  const [errorMessage, setErrorMessage] = useState("");
 
   useEffect(() => {
     async function fetchData() {
       try {
         const response = await getQuestions();
         contextType.setQuestions(response.results);
-        setReadyToPlay(true);
       } catch (e) {
         console.error(
           "-> Error getGameQuestions:",
           contextType.questions.length
         );
+        setErrorMessage("Can't load the game");
       }
     }
     fetchData();
@@ -33,7 +33,10 @@ export default function HomePage() {
 
   return (
     <div className="home-page">
-      <Title title={`Welcome to \n Trivia Challenge!`} />
+      <div className="error-message">{errorMessage}</div>
+      <div className="title">
+        <Title title={`Welcome to \n Trivia Challenge!`} />
+      </div>
       <div className="description">
         You will be presented with 10 True or False questions
       </div>
@@ -42,7 +45,8 @@ export default function HomePage() {
         <Button
           label="Begin"
           onClick={handleBeginClick}
-          disabled={!readyToPlay}
+          size={"large"}
+          disabled={!!errorMessage}
         />
       </div>
     </div>

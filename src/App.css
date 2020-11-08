@@ -3,13 +3,12 @@
   justify-content: center;
   align-items: flex-start;
   padding-top: 1.5rem;
-  background-color: #f0f0f0;
 }
 .card {
   background-color: lightgrey;
   width: 300px;
-  height: 600px;
+  height: 650px;
   border: 15px solid #4CAF50;
-  padding: 50px;
+  padding: 20px;
   margin: 20px;
 }

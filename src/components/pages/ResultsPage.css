@@ -1,0 +1,25 @@
+.results-page {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.results-page .score {
+  display: flex;
+  justify-content: center;
+  font-size: large;
+  font-weight: bold;
+  height: 3rem;
+}
+
+.results-page .results {
+  height: 30rem;
+  overflow: scroll;
+}
+
+.results-page .bottom-controllers-container {
+  margin-top: 2rem;
+  bottom: 1rem;
+  display: flex;
+  justify-content: center;
+}

@@ -4,11 +4,10 @@ class TriviaGameManager {
   questions = [];
   indexQuestion = 0;
   rightResults = [];
-  wrongResults = [];
 
-  constructor(testValue) {
-    this.testValue = testValue;
-  }
+  // constructor(testValue) {
+  //   this.testValue = testValue;
+  // }
 
   setQuestions = (questions) => {
     this.questions = questions;
@@ -16,25 +15,20 @@ class TriviaGameManager {
 
   addRightAnswer = (index) => {
     this.rightResults.push(index);
-  }
-
-  setRightResults = (questions) => {
-    this.questions = questions;
   };
 
-  setWrongResults = (questions) => {
-    this.questions = questions;
+  setRightAnswer = (index) => {
+    this.questions[index].user_answer_right = true;
   };
 
   increaseQuestionIndex = () => {
-    this.questionIndex = this.questionIndex++;
+    this.indexQuestion = this.indexQuestion + 1;
   };
 
   resetTriviaGameManager = () => {
     this.questions = [];
     this.indexQuestion = 0;
     this.rightResults = [];
-    this.wrongResults = [];
   };
 }
 

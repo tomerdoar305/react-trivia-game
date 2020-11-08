@@ -1,12 +1,20 @@
 .button {
-    background-color: #4CAF50;
-    border: none;
-    color: white;
-    padding: 15px 32px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 16px;
-    margin: 4px 2px;
-    cursor: pointer;
-  }
+  background-color: #4caf50;
+  border: none;
+  color: white;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  margin-right: 4px;
+  cursor: pointer;
+}
+.button-small {
+  font-size: 12px;
+  height: 1rem;
+  width: 3rem;
+}
+.button-large {
+  font-size: 16px;
+  height: 3rem;
+  width: 5rem;
+}

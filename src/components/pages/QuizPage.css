@@ -8,9 +8,30 @@
   display: flex;
   justify-content: center;
   margin-top: 10rem;
+  height: 10rem;
   font-size: large;
+  border: 1px solid;
+  padding: 1rem;
 }
-.quiz-page .controllers-container {
+
+.quiz-page .questionnumber {
+  font-size: large;
+  place-self: center;
+}
+
+.quiz-page .top-controllers-container {
+  bottom: 1rem;
+  display: flex;
+  width: 100%;
+}
+
+.quiz-page .top-controllers-container .timer-container {
+  width: 80%;
+}
+.quiz-page .top-controllers-container .button-container {
+  width: 20%;
+}
+.quiz-page .bottom-controllers-container {
   margin-top: 10rem;
   bottom: 1rem;
   display: flex;

@@ -1,0 +1,8 @@
+.question-result {
+    margin-bottom: 1rem;
+    display: flex;
+    flex-direction: row;    
+}
+.question-result .result {
+    padding-right: 0.5rem;
+}
