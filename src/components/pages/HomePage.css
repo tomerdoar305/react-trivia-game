@@ -11,9 +11,9 @@
   font-size: larger;
 }
 
-@media (max-width: 320px) {
+@media (max-width: 375px) {
   .home-page .description {
-    margin-top: 7rem;
+    margin-top: 8rem;
     font-size: medium;
   }
 }
@@ -52,11 +52,11 @@
   height: 1rem;
 }
 
-@media (max-width: 320px) {
+@media (max-width: 375px) {
   .home-page .radio {
     font-size: small;
   }
   .home-page .controllers-container {
-    margin-top: 7rem;
+    margin-top: 6rem;
   }
 }

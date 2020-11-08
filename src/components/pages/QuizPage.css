@@ -14,7 +14,7 @@
   padding: 1rem;
 }
 
-@media (max-width: 320px) {
+@media (max-width: 375px) {
   .quiz-page .question {
     font-size: medium;
     margin-top: 7rem;
@@ -42,7 +42,7 @@
   width: 10%;
 }
 
-@media (max-width: 320px) {
+@media (max-width: 375px) {
   .quiz-page .top-controllers-container .timer-container {
     width: 80%;
   }
@@ -57,7 +57,7 @@
   justify-content: center;
 }
 
-@media (max-width: 320px) {
+@media (max-width: 375px) {
   .quiz-page .bottom-controllers-container {
     margin-top: 10.5rem;
 
