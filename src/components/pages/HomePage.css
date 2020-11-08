@@ -14,12 +14,24 @@
 .home-page .sub-description {
   display: flex;
   justify-content: center;
-  margin-top: 10rem;
+  margin-top: 5rem;
   font-size: larger;
 }
 
+.home-page .difficulty {
+  margin-top: 7rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.home-page .difficulty .selection {
+  display: flex;
+  flex-direction: column;
+}
+
 .home-page .controllers-container {
-  margin-top: 10rem;
+  margin-top: 5rem;
   bottom: 1rem;
   display: flex;
   justify-content: center;

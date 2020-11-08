@@ -4,13 +4,30 @@ class TriviaGameManager {
   questions = [];
   indexQuestion = 0;
   rightResults = [];
+  difficulty = "easy";
+  timer = 0;
 
-  // constructor(testValue) {
-  //   this.testValue = testValue;
-  // }
+  constructor(difficulty) {
+    this.difficulty = difficulty;
+  }
 
   setQuestions = (questions) => {
     this.questions = questions;
+  };
+
+  setDifficulty = (difficulty) => {
+    this.difficulty = difficulty;
+    switch (difficulty) {
+      case "hard":
+        this.timer = 60;
+        break;
+      case "very hard":
+        this.timer = 30;
+        break;
+      default:
+        this.timer = 0;
+        break;
+    }
   };
 
   addRightAnswer = (index) => {

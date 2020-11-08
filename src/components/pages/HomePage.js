@@ -9,6 +9,7 @@ import "./HomePage.css";
 export default function HomePage() {
   const history = useHistory();
   const contextType = useContext(TriviaGameContext);
+  const [difficulty, setDifficulty] = useState(contextType.difficulty);
   const [errorMessage, setErrorMessage] = useState("");
 
   useEffect(() => {
@@ -27,6 +28,11 @@ export default function HomePage() {
     fetchData();
   });
 
+  const selectDifficulty = (event) => {
+    contextType.setDifficulty(event.target.value);
+    setDifficulty(event.target.value);
+  };
+
   const handleBeginClick = () => {
     history.push("/quizpage");
   };
@@ -41,6 +47,45 @@ export default function HomePage() {
         You will be presented with 10 True or False questions
       </div>
       <div className="sub-description">Can you score 100%?</div>
+
+      <div className="difficulty">
+        <div className="selection">
+          <div>Please select difficulty:</div>
+          <div className="radio">
+            <label>
+              <input
+                type="radio"
+                value="easy"
+                checked={difficulty === "easy"}
+                onChange={selectDifficulty}
+              />
+              Easy
+            </label>
+          </div>
+          <div className="radio">
+            <label>
+              <input
+                type="radio"
+                value="hard"
+                checked={difficulty === "hard"}
+                onChange={selectDifficulty}
+              />
+              Hard
+            </label>
+          </div>
+          <div className="radio">
+            <label>
+              <input
+                type="radio"
+                value="very hard"
+                checked={difficulty === "very hard"}
+                onChange={selectDifficulty}
+              />
+              Very Hard
+            </label>
+          </div>
+        </div>
+      </div>
       <div className="controllers-container">
         <Button
           label="Begin"
