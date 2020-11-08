@@ -1,12 +1,28 @@
 .question-result {
   margin-bottom: 1rem;
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   font-size: larger;
+}
+
+.question-result .question-container {
+  display: flex;
+  flex-direction: row;
+}
+
+.question-result .correct-answer {
+  display: flex;
+  flex-direction: row-reverse;
+  padding-right: 1rem;
+  font-size: medium;
+  font-weight: bold;
 }
 
 @media (max-width: 375px) {
     .question-result {
+      font-size: small;
+    }
+    .question-result .correct-answer {
       font-size: small;
     }
   }

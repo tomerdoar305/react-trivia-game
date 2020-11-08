@@ -40,6 +40,7 @@ export default function ResultsPage() {
             key={index}
             question={question.question}
             userAnswer={question?.user_answer_right}
+            correctAnswer={question.correct_answer}
           />
         ))}
       </div>

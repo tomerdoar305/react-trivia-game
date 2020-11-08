@@ -21,10 +21,10 @@ export default function QuizPage() {
   const [questionIterator, setQuestionIterator] = useState(indexQuestion);
 
   useEffect(() => {
+    console.log("contextType:", questions);
     if (questions.length === 0) {
       history.push("/");
     }
-    console.log("contextType:", questions);
   });
 
   const handleAnswerClick = (answer) => {
@@ -64,11 +64,11 @@ export default function QuizPage() {
           <Button label="Restart" size="small" onClick={handleRestartGame} />
         </div>
       </div>
-      <Title title={questions[questionIterator].category} />
+      <Title title={questions[questionIterator]?.category} />
       <span
         className="question"
         dangerouslySetInnerHTML={{
-          __html: `${questions[questionIterator].question}`,
+          __html: `${questions[questionIterator]?.question}`,
         }}
       ></span>
       <div className="question-number">{`${questionIterator + 1} of 10`}</div>
