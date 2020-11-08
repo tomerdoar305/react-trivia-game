@@ -51,20 +51,21 @@ export default function QuizPage() {
   return (
     <div className="quiz-page">
       <div className="top-controllers-container">
-        <div className="timer-container">
-          {timer !== 0 && (
-            <Timer
-              counter={timer}
-              questionIterator={questionIterator}
-              handleAnswerAfterTimeIsOut={handleAnswerClick}
-            />
-          )}
-        </div>
+        
         <div className="button-container">
           <Button label="Restart" size="small" onClick={handleRestartGame} />
         </div>
       </div>
       <Title title={questions[questionIterator]?.category} />
+      <div className="timer-container">
+        {timer !== 0 && (
+          <Timer
+            counter={timer}
+            questionIterator={questionIterator}
+            handleAnswerAfterTimeIsOut={handleAnswerClick}
+          />
+        )}
+      </div>
       <span
         className="question"
         dangerouslySetInnerHTML={{
