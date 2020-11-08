@@ -5,3 +5,8 @@
     font-weight: bold;
     height: 3rem;
 }
+
+.short-count {
+    color: red;
+    font-weight: bold;
+}
