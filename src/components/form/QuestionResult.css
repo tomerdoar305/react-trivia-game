@@ -1,9 +1,16 @@
 .question-result {
-    margin-bottom: 1rem;
-    display: flex;
-    flex-direction: row; 
-    font-size: larger;  
+  margin-bottom: 1rem;
+  display: flex;
+  flex-direction: row;
+  font-size: larger;
 }
+
+@media (max-width: 320px) {
+    .question-result {
+      font-size: small;
+    }
+  }
+
 .question-result .result {
-    padding-right: 0.5rem;
+  padding-right: 0.5rem;
 }

@@ -81,7 +81,7 @@ export default function HomePage() {
                 checked={difficulty === "very hard"}
                 onChange={selectDifficulty}
               />
-              Very Hard (30 sec per question)
+              Harder (30 sec per question)
             </label>
           </div>
         </div>

@@ -4,4 +4,11 @@
   font-size: xx-large;
   font-weight: bold;
   height: 3rem;
+  text-align: center;
+}
+
+@media (max-width: 320px) {
+  .title {
+    font-size: large;
+  }
 }

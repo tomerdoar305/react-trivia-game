@@ -36,9 +36,9 @@ export default function Timer(props) {
   const [count, setCount] = useState(counter);
 
   useEffect(() => {
-    let ccccc;
+    let timeoutId;
     const runCounter = () => {
-      ccccc = setTimeout(() => {
+      timeoutId = setTimeout(() => {
         setCount(count - 1);
       }, 1000);
     };
@@ -50,7 +50,7 @@ export default function Timer(props) {
       props.handleAnswerAfterTimeIsOut();
     }
     return () => {
-      clearTimeout(ccccc);
+      clearTimeout(timeoutId);
     };
   }, [count, props, counter]);
 
