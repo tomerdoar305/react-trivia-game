@@ -15,7 +15,7 @@ export default function QuizPage() {
     setRightAnswer,
     indexQuestion,
     increaseQuestionIndex,
-    timer
+    timer,
   } = useContext(TriviaGameContext);
 
   const [questionIterator, setQuestionIterator] = useState(indexQuestion);
@@ -56,7 +56,7 @@ export default function QuizPage() {
             <Timer
               counter={timer}
               questionIterator={questionIterator}
-              saveAnswer={handleAnswerClick}
+              handleAnswerAfterTimeIsOut={handleAnswerClick}
             />
           )}
         </div>

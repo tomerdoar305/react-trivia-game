@@ -37,7 +37,7 @@ class TriviaGameManager {
   setRightAnswer = (index) => {
     this.questions[index].user_answer_right = true;
   };
-
+ 
   increaseQuestionIndex = () => {
     this.indexQuestion = this.indexQuestion + 1;
   };
@@ -46,6 +46,8 @@ class TriviaGameManager {
     this.questions = [];
     this.indexQuestion = 0;
     this.rightResults = [];
+    this.difficulty = "easy";
+    this.timer = 0;
   };
 }
 

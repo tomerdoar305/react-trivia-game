@@ -70,7 +70,7 @@ export default function HomePage() {
                 checked={difficulty === "hard"}
                 onChange={selectDifficulty}
               />
-              Hard
+              Hard (60 sec per question)
             </label>
           </div>
           <div className="radio">
@@ -81,7 +81,7 @@ export default function HomePage() {
                 checked={difficulty === "very hard"}
                 onChange={selectDifficulty}
               />
-              Very Hard
+              Very Hard (30 sec per question)
             </label>
           </div>
         </div>
