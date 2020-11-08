@@ -14,9 +14,10 @@
   padding: 1rem;
 }
 
-.quiz-page .questionnumber {
+.quiz-page .question-number {
   font-size: large;
   place-self: center;
+  font-weight: bold;
 }
 
 .quiz-page .top-controllers-container {
@@ -26,10 +27,10 @@
 }
 
 .quiz-page .top-controllers-container .timer-container {
-  width: 80%;
+  width: 90%;
 }
 .quiz-page .top-controllers-container .button-container {
-  width: 20%;
+  width: 10%;
 }
 .quiz-page .bottom-controllers-container {
   margin-top: 10rem;

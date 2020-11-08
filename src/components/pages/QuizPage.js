@@ -2,7 +2,7 @@ import React, { useState, useEffect, useContext } from "react";
 import { useHistory } from "react-router-dom";
 import Title from "../form/Title";
 import Button from "../form/Button";
-import Timer from "../form/Timer"
+import Timer from "../form/Timer";
 import { TriviaGameContext } from "../../context/TriviaGameContext";
 import "./QuizPage.css";
 
@@ -51,7 +51,13 @@ export default function QuizPage() {
     <div className="quiz-page">
       <div className="top-controllers-container">
         <div className="timer-container">
-          <Timer />
+          {true && (
+            <Timer
+              counter={10}
+              questionIterator={questionIterator}
+              saveAnswer={handleAnswerClick}
+            />
+          )}
         </div>
         <div className="button-container">
           <Button label="Restart" size="small" onClick={handleRestartGame} />
@@ -64,7 +70,7 @@ export default function QuizPage() {
           __html: `${questions[questionIterator].question}`,
         }}
       ></span>
-      <div className={"questionnumber"}>{`${questionIterator + 1} of 10`}</div>
+      <div className="question-number">{`${questionIterator + 1} of 10`}</div>
 
       <div className="bottom-controllers-container">
         <Button

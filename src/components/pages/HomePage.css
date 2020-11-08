@@ -8,14 +8,14 @@
   display: flex;
   justify-content: center;
   margin-top: 10rem;
-  font-size: large;
+  font-size: larger;
 }
 
 .home-page .sub-description {
   display: flex;
   justify-content: center;
   margin-top: 10rem;
-  font-size: large;
+  font-size: larger;
 }
 
 .home-page .controllers-container {
