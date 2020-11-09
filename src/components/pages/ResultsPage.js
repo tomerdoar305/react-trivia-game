@@ -12,7 +12,7 @@ export default function ResultsPage() {
   const {
     questions,
     resetTriviaGameManager,
-    rightResults,
+    correctResultsCounter,
     indexQuestion,
   } = useContext(TriviaGameContext);
 
@@ -31,9 +31,9 @@ export default function ResultsPage() {
   return (
     <div className="results-page">
       <div className="title">
-        <Title title={`Result page`} />
+        <Title title={`Result:`} />
       </div>
-      <div className="score">{`You scored ${rightResults.length} / 10`}</div>
+      <div className="score">{`You scored ${correctResultsCounter} / 10`}</div>
       <div className="results">
         {questions.map((question, index) => (
           <QuestionResult

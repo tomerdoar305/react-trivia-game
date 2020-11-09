@@ -1,9 +1,15 @@
 import React, { useEffect, useContext, useState } from "react";
 import Title from "../form/Title";
 import Button from "../form/Button";
+import RadioButton from "../form/RadioButton";
 import { useHistory } from "react-router-dom";
 import { TriviaGameContext } from "../../context/TriviaGameContext";
 import { getQuestions } from "../../api/api";
+import {
+  RADIO_BUTTON_EASY_LABEL,
+  RADIO_BUTTON_HARD_LABEL,
+  RADIO_BUTTON_HARDER_LABEL,
+} from "../../utils/constants";
 import "./HomePage.css";
 
 export default function HomePage() {
@@ -18,10 +24,7 @@ export default function HomePage() {
         const response = await getQuestions();
         contextType.setQuestions(response.results);
       } catch (e) {
-        console.error(
-          "-> Error getGameQuestions:",
-          contextType.questions.length
-        );
+        console.error("-> Error getQuestions:", e);
         setErrorMessage("Can't load the game");
       }
     }
@@ -51,39 +54,24 @@ export default function HomePage() {
       <div className="difficulty">
         <div className="selection">
           <div>Please select difficulty:</div>
-          <div className="radio">
-            <label>
-              <input
-                type="radio"
-                value="easy"
-                checked={difficulty === "easy"}
-                onChange={selectDifficulty}
-              />
-              Easy
-            </label>
-          </div>
-          <div className="radio">
-            <label>
-              <input
-                type="radio"
-                value="hard"
-                checked={difficulty === "hard"}
-                onChange={selectDifficulty}
-              />
-              Hard (60 sec per question)
-            </label>
-          </div>
-          <div className="radio">
-            <label>
-              <input
-                type="radio"
-                value="very hard"
-                checked={difficulty === "very hard"}
-                onChange={selectDifficulty}
-              />
-              Harder (30 sec per question)
-            </label>
-          </div>
+          <RadioButton
+            value="easy"
+            checked={difficulty === "easy"}
+            onChange={selectDifficulty}
+            label={RADIO_BUTTON_EASY_LABEL}
+          />
+          <RadioButton
+            value="hard"
+            checked={difficulty === "hard"}
+            onChange={selectDifficulty}
+            label={RADIO_BUTTON_HARD_LABEL}
+          />
+          <RadioButton
+            value="harder"
+            checked={difficulty === "harder"}
+            onChange={selectDifficulty}
+            label={RADIO_BUTTON_HARDER_LABEL}
+          />
         </div>
       </div>
       <div className="controllers-container">

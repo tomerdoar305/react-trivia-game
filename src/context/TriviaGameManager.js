@@ -3,7 +3,7 @@
 class TriviaGameManager {
   questions = [];
   indexQuestion = 0;
-  rightResults = [];
+  correctResultsCounter = 0;
   difficulty = "easy";
   timer = 0;
 
@@ -21,7 +21,7 @@ class TriviaGameManager {
       case "hard":
         this.timer = 60;
         break;
-      case "very hard":
+      case "harder":
         this.timer = 30;
         break;
       default:
@@ -30,8 +30,8 @@ class TriviaGameManager {
     }
   };
 
-  addRightAnswer = (index) => {
-    this.rightResults.push(index);
+  addCorrectAnswer = () => {
+    this.correctResultsCounter++;
   };
 
   setRightAnswer = (index) => {
@@ -39,7 +39,7 @@ class TriviaGameManager {
   };
  
   increaseQuestionIndex = () => {
-    this.indexQuestion = this.indexQuestion + 1;
+    this.indexQuestion++;
   };
 
   resetTriviaGameManager = () => {

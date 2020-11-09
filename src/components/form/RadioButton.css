@@ -1,0 +1,9 @@
+.radio {
+    font-size: medium;
+  }
+
+@media (max-width: 375px) {
+  .radio {
+    font-size: small;
+  }
+}

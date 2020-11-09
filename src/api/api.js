@@ -1,3 +1,5 @@
+//TODO - to change to asinc await
+
 export function getQuestions() {
   return new Promise((resolve, reject) => {
     const req = new Request(

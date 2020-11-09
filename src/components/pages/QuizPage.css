@@ -46,6 +46,16 @@
   justify-content: center;
 }
 
+.quiz-page .timer-container .answer-result-color-green {
+  color: #4caf50;
+  font-weight: bold;
+}
+
+.quiz-page .timer-container .answer-result-color-red {
+  color: red;
+  font-weight: bold;
+}
+
 @media (max-width: 375px) {
   .quiz-page .top-controllers-container .button-container {
     width: 20%;
