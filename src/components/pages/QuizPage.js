@@ -54,7 +54,7 @@ export default function QuizPage() {
       if (questionIterator === questions.length - 1) {
         history.push("/resultspage");
       }
-    }, 1000);
+    }, 500);
   };
 
   const handleRestartGame = () => {
