@@ -1,10 +1,13 @@
 import React from "react";
+import PropTypes from "prop-types";
 import "./Button.css";
 
 export default function Button(props) {
   return (
     <button
-      className={`button button-${props.size}`}
+      className={`button button-${props.size} ${
+        props.disabled ? "button-disable" : ""
+      }`}
       onClick={props.onClick}
       disabled={props.disabled}
     >
@@ -12,3 +15,10 @@ export default function Button(props) {
     </button>
   );
 }
+
+Button.propTypes = {
+  size: PropTypes.string.isRequired,
+  onClick: PropTypes.func.isRequired,
+  disabled: PropTypes.bool,
+  label: PropTypes.string.isRequired,
+};

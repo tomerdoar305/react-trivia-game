@@ -8,6 +8,9 @@
   margin-right: 4px;
   cursor: pointer;
 }
+.button-disable {
+  background-color: #7E7E7E	;
+}
 .button-small {
   font-size: 12px;
   height: 1rem;

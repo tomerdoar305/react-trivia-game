@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 import "./RadioButton.css";
 
 export default function RadioButton(props) {
@@ -16,3 +17,10 @@ export default function RadioButton(props) {
   </div>
   );
 }
+
+RadioButton.propTypes = {
+  value: PropTypes.string.isRequired,
+  onChange: PropTypes.func.isRequired,
+  checked: PropTypes.bool,
+  label: PropTypes.string.isRequired,
+};

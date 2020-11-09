@@ -29,7 +29,7 @@ export default function HomePage() {
       }
     }
     fetchData();
-  });
+  }, []);
 
   const selectDifficulty = (event) => {
     contextType.setDifficulty(event.target.value);

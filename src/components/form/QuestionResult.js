@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 import "./QuestionResult.css";
 
 export default function QuestionResult(props) {
@@ -21,3 +22,9 @@ export default function QuestionResult(props) {
     </div>
   );
 }
+
+QuestionResult.propTypes = {
+  userAnswer: PropTypes.bool,
+  question: PropTypes.string.isRequired,
+  correctAnswer: PropTypes.string,
+};

@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import PropTypes from "prop-types";
 import "./Timer.css";
 
 export default function Timer(props) {
@@ -36,3 +37,9 @@ export default function Timer(props) {
     >{`Timer: ${count}`}</div>
   );
 }
+
+Timer.propTypes = {
+  counter: PropTypes.number.isRequired,
+  handleAnswerAfterTimeIsOut: PropTypes.func.isRequired,
+  questionIterator: PropTypes.number.isRequired,
+};
