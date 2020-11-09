@@ -46,6 +46,12 @@
   justify-content: center;
 }
 
+@media (max-width: 375px) {
+  .quiz-page .timer-container {
+    margin-top: 3rem;
+  }
+}
+
 .quiz-page .timer-container .answer-result-color-green {
   color: #4caf50;
   font-weight: bold;
@@ -70,6 +76,6 @@
 
 @media (max-width: 375px) {
   .quiz-page .bottom-controllers-container {
-    margin-top: 5rem;
+    margin-top: 2rem;
   }
 }

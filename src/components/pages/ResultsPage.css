@@ -17,6 +17,12 @@
   overflow: scroll;
 }
 
+@media (max-width: 375px) {
+  .results-page .results {
+    height: 22rem;
+  }
+}
+
 .results-page .bottom-controllers-container {
   margin-top: 2rem;
   bottom: 1rem;

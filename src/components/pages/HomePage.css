@@ -13,7 +13,7 @@
 
 @media (max-width: 375px) {
   .home-page .description {
-    margin-top: 8rem;
+    margin-top: 5rem;
     font-size: medium;
   }
 }
@@ -25,11 +25,23 @@
   font-size: larger;
 }
 
+@media (max-width: 375px) {
+  .home-page .sub-description {
+    margin-top: 4rem;
+  }
+}
+
 .home-page .difficulty {
   margin-top: 7rem;
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+
+@media (max-width: 375px) {
+  .home-page .difficulty {
+    margin-top: 4rem;
+  }
 }
 
 .home-page .difficulty .selection {
@@ -57,6 +69,6 @@
     font-size: small;
   }
   .home-page .controllers-container {
-    margin-top: 5rem;
+    margin-top: 4.5rem;
   }
 }
