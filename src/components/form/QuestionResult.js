@@ -1,5 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
+import HTMLEntities from "./HTMLEntities";
 import "./QuestionResult.css";
 
 export default function QuestionResult(props) {
@@ -11,14 +12,13 @@ export default function QuestionResult(props) {
         ) : (
           <div className="result">&times;</div>
         )}
-        <div
-          className="question"
-          dangerouslySetInnerHTML={{
-            __html: `${props.question}`,
-          }}
-        ></div>
+        <div className="question">
+          <HTMLEntities>{props.question}</HTMLEntities>
+        </div>
       </div>
-      <div className={"correct-answer"}>{`Correct answer: ${props.correctAnswer}`}</div>
+      <div
+        className={"correct-answer"}
+      >{`Correct answer: ${props.correctAnswer}`}</div>
     </div>
   );
 }

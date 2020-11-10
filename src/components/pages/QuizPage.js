@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useContext } from "react";
 import { useHistory } from "react-router-dom";
+import HTMLEntities from "../form/HTMLEntities";
 import Title from "../form/Title";
 import Button from "../form/Button";
 import Timer from "../form/Timer";
@@ -21,6 +22,7 @@ export default function QuizPage() {
     indexQuestion,
     increaseQuestionIndex,
     timer,
+    checkAnswer,
   } = useContext(TriviaGameContext);
 
   const [questionIterator, setQuestionIterator] = useState(indexQuestion);
@@ -33,7 +35,8 @@ export default function QuizPage() {
   });
 
   const handleAnswerClick = (answer) => {
-    if (questions[questionIterator].correct_answer === answer) {
+    // if (questions[questionIterator].correct_answer === answer) {
+    if (checkAnswer(answer)) {
       setRightAnswer(questionIterator);
       addCorrectAnswer();
       setResult(CORRECT_ANSWER_RESULT);
@@ -50,7 +53,7 @@ export default function QuizPage() {
       increaseQuestionIndex();
       setAnswerResult("");
       setQuestionIterator(questionIterator + 1);
-      clearTimeout(timeoutId);
+      //clearTimeout(timeoutId); //TODO - not need
       if (questionIterator === questions.length - 1) {
         history.push("/resultspage");
       }
@@ -89,13 +92,12 @@ export default function QuizPage() {
           {answerResult}
         </div>
       </div>
-      <span
-        className="question"
-        dangerouslySetInnerHTML={{
-          __html: `${questions[questionIterator]?.question}`,
-        }}
-      ></span>
-      <div className="question-number">{`${questionIterator + 1} of ${questions.length}`}</div>
+      <span className="question">
+        <HTMLEntities>{questions[questionIterator]?.question}</HTMLEntities>
+      </span>
+      <div className="question-number">{`${questionIterator + 1} of ${
+        questions.length
+      }`}</div>
 
       <div className="bottom-controllers-container">
         <Button

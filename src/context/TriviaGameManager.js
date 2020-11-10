@@ -30,16 +30,20 @@ class TriviaGameManager {
     }
   };
 
+  setRightAnswer = (index) => {
+    this.questions[index].user_answer_right = true;
+  };
+
   addCorrectAnswer = () => {
     this.correctResultsCounter++;
   };
 
-  setRightAnswer = (index) => {
-    this.questions[index].user_answer_right = true;
-  };
- 
   increaseQuestionIndex = () => {
     this.indexQuestion++;
+  };
+
+  checkAnswer = (userAnswer) => {
+    return this.questions[this.indexQuestion].correct_answer === userAnswer;
   };
 
   resetTriviaGameManager = () => {
@@ -48,6 +52,7 @@ class TriviaGameManager {
     this.rightResults = [];
     this.difficulty = "easy";
     this.timer = 0;
+    this.correctResultsCounter = 0;
   };
 }
 

@@ -1,4 +1,4 @@
-//TODO - to change to asinc await
+//TODO - to change to asinc await. To take care on other browsers...
 
 export function getQuestions() {
   return new Promise((resolve, reject) => {
