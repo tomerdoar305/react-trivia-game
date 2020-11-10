@@ -32,10 +32,9 @@ export default function QuizPage() {
     if (questions.length === 0) {
       history.push("/");
     }
-  });
+  }, []);
 
   const handleAnswerClick = (answer) => {
-    // if (questions[questionIterator].correct_answer === answer) {
     if (checkAnswer(answer)) {
       setRightAnswer(questionIterator);
       addCorrectAnswer();
@@ -49,11 +48,10 @@ export default function QuizPage() {
 
   const setResult = (result) => {
     setAnswerResult(result);
-    let timeoutId = setTimeout(() => {
+    setTimeout(() => {
       increaseQuestionIndex();
       setAnswerResult("");
       setQuestionIterator(questionIterator + 1);
-      //clearTimeout(timeoutId); //TODO - not need
       if (questionIterator === questions.length - 1) {
         history.push("/resultspage");
       }

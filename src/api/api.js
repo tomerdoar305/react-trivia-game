@@ -1,14 +1,6 @@
-//TODO - to change to asinc await. To take care on other browsers...
-
 export function getQuestions() {
   return new Promise((resolve, reject) => {
-    const req = new Request(
-      `https://opentdb.com/api.php?amount=10&difficulty=hard&type=boolean`,
-      {
-        method: "GET",
-      }
-    );
-    fetch(req)
+    fetch(`https://opentdb.com/api.php?amount=10&difficulty=hard&type=boolean`)
       .then((res) => {
         resolve(res.json());
       })
@@ -16,4 +8,16 @@ export function getQuestions() {
         reject(error);
       });
   });
+}
+
+export async function getQuestionsAsyncAwait() {
+  try {
+    const response = await fetch(
+      `https://opentdb.com/api.php?amount=10&difficulty=hard&type=boolean`
+    );
+    const data = await response.json();
+    return data;
+  } catch (error) {
+    return error;
+  }
 }
