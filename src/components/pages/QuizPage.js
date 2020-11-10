@@ -17,8 +17,8 @@ export default function QuizPage() {
   const {
     questions,
     resetTriviaGameManager,
-    addCorrectAnswer,
-    setRightAnswer,
+    increaseCorrectAnswersCounter,
+    setUserAnswerRight,
     indexQuestion,
     increaseQuestionIndex,
     timer,
@@ -26,7 +26,7 @@ export default function QuizPage() {
   } = useContext(TriviaGameContext);
 
   const [questionIterator, setQuestionIterator] = useState(indexQuestion);
-  const [answerResult, setAnswerResult] = useState("");
+  const [answerResultMessage, setAnswerResultMessage] = useState("");
 
   useEffect(() => {
     if (questions.length === 0) {
@@ -36,8 +36,8 @@ export default function QuizPage() {
 
   const handleAnswerClick = (answer) => {
     if (checkAnswer(answer)) {
-      setRightAnswer(questionIterator);
-      addCorrectAnswer();
+      setUserAnswerRight(questionIterator);
+      increaseCorrectAnswersCounter();
       setResult(CORRECT_ANSWER_RESULT);
     } else if (answer === "") {
       setResult(OUT_OF_TIME_ANSWER_RESULT);
@@ -47,10 +47,10 @@ export default function QuizPage() {
   };
 
   const setResult = (result) => {
-    setAnswerResult(result);
+    setAnswerResultMessage(result);
     setTimeout(() => {
       increaseQuestionIndex();
-      setAnswerResult("");
+      setAnswerResultMessage("");
       setQuestionIterator(questionIterator + 1);
       if (questionIterator === questions.length - 1) {
         history.push("/resultspage");
@@ -73,7 +73,7 @@ export default function QuizPage() {
       <Title title={questions[questionIterator]?.category} />
 
       <div className="timer-container">
-        {timer !== 0 && answerResult === "" && (
+        {timer !== 0 && answerResultMessage === "" && (
           <Timer
             counter={timer}
             questionIterator={questionIterator}
@@ -82,12 +82,12 @@ export default function QuizPage() {
         )}
         <div
           className={
-            answerResult === CORRECT_ANSWER_RESULT
+            answerResultMessage === CORRECT_ANSWER_RESULT
               ? "answer-result-color-green"
               : "answer-result-color-red"
           }
         >
-          {answerResult}
+          {answerResultMessage}
         </div>
       </div>
       <span className="question">
@@ -99,13 +99,13 @@ export default function QuizPage() {
 
       <div className="bottom-controllers-container">
         <Button
-          disabled={!!answerResult}
+          disabled={!!answerResultMessage}
           label="True"
           size="large"
           onClick={() => handleAnswerClick("True")}
         />
         <Button
-          disabled={!!answerResult}
+          disabled={!!answerResultMessage}
           label="False"
           size="large"
           onClick={() => handleAnswerClick("False")}

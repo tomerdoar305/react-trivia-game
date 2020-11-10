@@ -30,11 +30,11 @@ class TriviaGameManager {
     }
   };
 
-  setRightAnswer = (index) => {
+  setUserAnswerRight = (index) => {
     this.questions[index].user_answer_right = true;
   };
 
-  addCorrectAnswer = () => {
+  increaseCorrectAnswersCounter = () => {
     this.correctResultsCounter++;
   };
 
