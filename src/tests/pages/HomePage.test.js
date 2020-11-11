@@ -10,7 +10,7 @@ describe("View HomePage correctly", () => {
    triviaGameManager.setQuestions(data.results);
 
   it("should have 3 radio buttons", () => {
-      expect(true).toBe(true)
+     
     const { queryAllByTestId } = render(
       <TriviaGameContext.Provider value={triviaGameManager}>
         <HomePage />
@@ -18,4 +18,15 @@ describe("View HomePage correctly", () => {
     );
     expect(queryAllByTestId("radio-button")).toHaveLength(3);
   });
+
+  it("should have 1 button", () => {
+   
+  const { queryAllByTestId } = render(
+    <TriviaGameContext.Provider value={triviaGameManager}>
+      <HomePage />
+    </TriviaGameContext.Provider>
+  );
+  expect(queryAllByTestId("button")).toHaveLength(1);
+  expect(queryAllByTestId("button")[0]).not.toHaveAttribute('disabled');
+});
 });
