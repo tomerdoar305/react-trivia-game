@@ -17,7 +17,6 @@ export default function ResultsPage() {
   } = useContext(TriviaGameContext);
 
   useEffect(() => {
-    //console.log("ResultsPage useEffect:", questions[0].question);
     if (questions.length === 0 || indexQuestion < 9) {
       history.push("/");
     }
