@@ -1,31 +1,32 @@
 .results-page {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
 .results-page .score {
-  display: flex;
-  justify-content: center;
-  font-size: large;
-  font-weight: bold;
-  height: 3rem;
+    display: flex;
+    justify-content: center;
+    font-size: large;
+    font-weight: bold;
+    height: 3rem;
 }
 
 .results-page .results {
-  height: 30rem;
-  overflow: scroll;
+    height: 30rem;
+    overflow-y: scroll;
+    overflow-x: hidden;
 }
 
 @media (max-width: 375px) {
-  .results-page .results {
-    height: 22rem;
-  }
+    .results-page .results {
+        height: 22rem;
+    }
 }
 
 .results-page .bottom-controllers-container {
-  margin-top: 2rem;
-  bottom: 1rem;
-  display: flex;
-  justify-content: center;
+    margin-top: 2rem;
+    bottom: 1rem;
+    display: flex;
+    justify-content: center;
 }
