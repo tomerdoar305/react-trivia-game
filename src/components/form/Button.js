@@ -5,7 +5,7 @@ import "./Button.css";
 export default function Button(props) {
   return (
     <button
-    data-testid="button"
+      data-testid="button"
       className={`button button-${props.size} ${
         props.disabled ? "button-disable" : ""
       }`}

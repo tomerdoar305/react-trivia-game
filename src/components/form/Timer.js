@@ -3,7 +3,6 @@ import PropTypes from "prop-types";
 import "./Timer.css";
 
 export default function Timer(props) {
-
   const { counter } = props;
 
   const [count, setCount] = useState(counter);
@@ -33,6 +32,7 @@ export default function Timer(props) {
 
   return (
     <div
+      data-testid="timer"
       className={`${count < 5 ? "short-count" : ""}`}
     >{`Timer: ${count}`}</div>
   );
