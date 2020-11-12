@@ -21,3 +21,6 @@ This project is a Trivia game that has 10 true or false questions.
 ## Setup documentation:
 - Run the application by typing: ‘npm install` followed by `npm run start` 
 - Run the test by typing: ’npm run test’
+
+## Play online:
+- The game is deployed the on a server at: http://subsequent-credit.surge.sh/ , so you can play it without having to install it locally.
