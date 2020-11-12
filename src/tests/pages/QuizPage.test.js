@@ -5,7 +5,7 @@ import { TriviaGameContext } from "../../context/TriviaGameContext";
 import TriviaGameManager from "../../context/TriviaGameManager";
 import { data } from "../__mock__/data";
 
-describe("View HomePage correctly", () => {
+describe("View QuizPage correctly", () => {
   const triviaGameManager = new TriviaGameManager("easy");
   triviaGameManager.setQuestions(data.results);
 
