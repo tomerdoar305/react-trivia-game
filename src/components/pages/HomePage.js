@@ -23,7 +23,6 @@ export default function HomePage() {
       try {
         const response = await getQuestions();
         contextType.setQuestions(response.results);
-        console.log("questions:", response.results);
       } catch (e) {
         console.error("-> Error from getQuestions:", e);
         setErrorMessage("Can't load the game");
